@@ -34,6 +34,12 @@ function WeatherForm({
         className="input-black py-2 px-3 mt-2 mb-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
         onChange={(e) => onLocationChange(e.target.value)}
         placeholder="Enter location"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            handleGetWeather();
+          }
+        }}
       />
       <button
         type="button"
