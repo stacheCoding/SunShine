@@ -55,7 +55,11 @@ function App() {
           onSelectedPeriodChange={setSelectedPeriod}
           onSubmit={handleGetWeather}
         />
-        <div>
+        <div
+          className={`temps ${
+            temperatureValues.length > 0 ? "opacity-100" : "opacity-0"
+          } flex flex-col justify-evenly h-96 bg-black rounded-3xl m-10 p-5`}
+        >
           {temperatureValues.map((temperature, index) => {
             let displayText;
             if (selectedPeriod === "1d") {
